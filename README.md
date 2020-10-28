@@ -6,10 +6,10 @@ Renders the Mandelbrot set to a canvas using 2048 discrete color values computed
 
 Contents:
 
-* `index.html` which loads [MessagePack for encoding](https://github.com/msgpack/msgpack-javascript) contains the canvas
-* `js/wapc.js` which loads waPC modules in the browser/JavaScript
-* `js/mandelbrot.js` which performs the rendering on the JS side
-* `wasm/mandelbrot.wasm` the WebAssembly module that computes the Mandelbrot set compiled from AssemblyScript
+* `index.html` - contains the canvas
+* `js/wapc.js` - loads waPC modules in the browser/JavaScript
+* `js/mandelbrot.js` - performs the rendering on the JS side
+* `wasm/mandelbrot.wasm` - WebAssembly module that computes the Mandelbrot set compiled from AssemblyScript
 
 Building:
 
