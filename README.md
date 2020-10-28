@@ -9,7 +9,7 @@ Contents:
 * `index.html` - contains the canvas
 * `js/wapc.js` - loads waPC modules in the browser/JavaScript
 * `js/mandelbrot.js` - performs the rendering on the JS side
-* `wasm/mandelbrot.wasm` - WebAssembly module that computes the Mandelbrot set compiled from AssemblyScript
+* `wasm/mandelbrot.wasm` - Compiled AssemblyScript module that computes the Mandelbrot set
 
 Building:
 
