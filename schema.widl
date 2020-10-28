@@ -1,0 +1,5 @@
+namespace "mandelbrot"
+
+interface {
+  update(width: u32, height: u32, limit: u32): [u16]
+}
