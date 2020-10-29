@@ -11,6 +11,9 @@ Contents:
 * `js/mandelbrot.js` - performs the rendering on the JS side
 * `wasm/mandelbrot-as.wasm` - Compiled [AssemblyScript](https://www.assemblyscript.org/) module that computes the Mandelbrot set
 * `wasm/mandelbrot-tinygo.wasm` - Compiled [TinyGo](https://tinygo.org/) module that computes the Mandelbrot set
+* `wasm/mandelbrot-rust.wasm` - Compiled [Rust](https://www.rust-lang.org/) module that computes the Mandelbrot set
+
+Note: `js/mandelbrot.js` loads the AssemblyScript module, but you can change it to test the other language's modules.
 
 Building:
 

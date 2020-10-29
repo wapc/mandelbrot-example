@@ -1,13 +1,13 @@
 {
-  "name": "browser-demo",
+  "name": "mandelbrot-example-as",
   "version": "0.1.0",
   "description": "",
   "scripts": {
     "build": "asc assembly/index.ts -b wasm/mandelbrot-as.wasm --use abort=assembly/index/abort --optimize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Phil Kedy <phil.kedy@gmail.com>",
+  "license": "Apache-2.0",
   "dependencies": {
     "@wapc/as-msgpack": "^0.1.7",
     "wapc-guest-as": "git+https://github.com/wapc/wapc-guest-as#v0.2.1"
