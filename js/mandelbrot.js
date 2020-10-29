@@ -13,13 +13,13 @@ const boundingRect = canvas.getBoundingClientRect();
 const ctx = canvas.getContext("2d");
 
 // Compute the size of the viewport
-const ratio  = window.devicePixelRatio || 1;
-const width  = (boundingRect.width  | 0) * ratio;
+const ratio = window.devicePixelRatio || 1;
+const width = (boundingRect.width | 0) * ratio;
 const height = (boundingRect.height | 0) * ratio;
 const size = width * height;
 const byteSize = size << 1; // discrete color indices in range [0, 2047] (2 bytes per pixel)
 
-canvas.width  = width;
+canvas.width = width;
 canvas.height = height;
 
 ctx.scale(ratio, ratio);
@@ -34,7 +34,7 @@ function computeColors() {
   canvas.height = 1;
   const ctx = canvas.getContext("2d");
   const grd = ctx.createLinearGradient(0, 0, 2048, 0);
-  grd.addColorStop(0.00, "#000764");
+  grd.addColorStop(0.0, "#000764");
   grd.addColorStop(0.16, "#2068CB");
   grd.addColorStop(0.42, "#EDFFFF");
   grd.addColorStop(0.6425, "#FFAA00");
@@ -51,17 +51,20 @@ const colors = computeColors();
   const module = await compileWebAssembly("/wasm/mandelbrot-as.wasm");
   const instance = await WaPC.instantiate(module, {
     initial: initial,
-    consoleLogger: function(message) {
+    consoleLogger: function (message) {
       console.log(message);
-    }
+    },
   });
 
   // Update state
-  const response = instance.invoke("update", MessagePack.encode({
-    width: width,
-    height: height,
-    limit: 40
-  }));
+  const response = instance.invoke(
+    "update",
+    MessagePack.encode({
+      width: width,
+      height: height,
+      limit: 40,
+    })
+  );
   // buffer is a Uint16Array
   const buffer = MessagePack.decode(response);
 
