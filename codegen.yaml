@@ -38,3 +38,9 @@ generates:
     visitorClass: ScaffoldVisitor
     config:
       use: generated
+---
+schema: schema.widl
+generates:
+  render2image/module/module.go:
+    package: widl-codegen/language/go
+    visitorClass: ModuleVisitor

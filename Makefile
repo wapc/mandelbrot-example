@@ -16,3 +16,7 @@ build:
 
 clean:
 	rm -Rf wasm
+
+png:
+	go run render2image/main.go wasm/mandelbrot-as.wasm rendered.png
+	open rendered.png

@@ -34,3 +34,9 @@ node server.js
 ```
 
 Then point your browswer to [http://localhost:8888](http://localhost:8888).
+
+Finally, to demonstrate the portability of waPC modules, you can run a simple Go program to export the rendered image to a png.
+
+```sh
+make png
+```
