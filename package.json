@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "build": "asc assembly/index.ts -b wasm/mandelbrot.wasm --use abort=assembly/index/abort --optimize",
+    "build": "asc assembly/index.ts -b wasm/mandelbrot-as.wasm --use abort=assembly/index/abort --optimize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

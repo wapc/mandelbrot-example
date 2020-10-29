@@ -47,8 +47,14 @@ function computeColors() {
 const colors = computeColors();
 
 (async () => {
-  const module = await compileWebAssembly("/wasm/mandelbrot.wasm");
-  const instance = await WaPC.instantiate(module);
+  const initial = ((byteSize + 0xffff) & ~0xffff) >>> 15;
+  const module = await compileWebAssembly("/wasm/mandelbrot-as.wasm");
+  const instance = await WaPC.instantiate(module, {
+    initial: initial,
+    consoleLogger: function(message) {
+      console.log(message);
+    }
+  });
 
   // Update state
   const response = instance.invoke("update", MessagePack.encode({

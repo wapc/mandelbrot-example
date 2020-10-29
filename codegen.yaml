@@ -9,3 +9,19 @@ generates:
     visitorClass: ScaffoldVisitor
     config:
       package: './module'
+---
+schema: schema.widl
+parentDir: tinygo
+generates:
+  module/module.go:
+    package: widl-codegen/language/tinygo
+    visitorClass: ModuleVisitor
+    config:
+      package: module
+  main.go:
+    ifNotExists: true
+    package: widl-codegen/language/tinygo
+    visitorClass: ScaffoldVisitor
+    config:
+      import: github.com/wapc/mandelbrot-example/tinygo/module
+      package: module

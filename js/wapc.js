@@ -22,10 +22,14 @@ class WaPC {
       wasi_unstable: {
         fd_write: inst.__fd_write.bind(inst),
       },
+      //env: inst.options.env
     });
     inst.instance = instance;
     inst.exports = instance.exports; // the exports of that instance
     inst.memory = inst.exports.memory;
+    if (inst.options.initial) {
+      inst.memory.grow(inst.options.initial - 1);
+    }
     inst.guestCall = inst.exports.__guest_call;
 
     if (inst.exports._start) {
