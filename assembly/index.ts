@@ -1,4 +1,4 @@
-import { handleCall, handleAbort } from "wapc-guest-as";
+import { handleCall, handleAbort } from "@wapc/as-guest";
 import { Handlers } from "./module";
 
 export function wapc_init(): void {

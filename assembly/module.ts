@@ -1,5 +1,12 @@
-import { Decoder, Writer, Encoder, Sizer, Value } from "@wapc/as-msgpack";
-import { register, hostCall } from "wapc-guest-as";
+import { register, hostCall } from "@wapc/as-guest";
+import {
+  Decoder,
+  Writer,
+  Encoder,
+  Sizer,
+  Codec,
+  Value,
+} from "@wapc/as-msgpack";
 
 export class Host {
   binding: string;
@@ -60,7 +67,7 @@ function updateWrapper(payload: ArrayBuffer): ArrayBuffer {
   return ua;
 }
 
-export class UpdateArgs {
+export class UpdateArgs implements Codec {
   width: u32 = 0;
   height: u32 = 0;
   limit: u32 = 0;
