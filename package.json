@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@wapc/as-guest": "^v0.2.1",
-    "@wapc/as-msgpack": "^0.1.10"
+    "@wapc/as-msgpack": "^0.1.11"
   },
   "devDependencies": {
     "assemblyscript": "^0.17.1"
