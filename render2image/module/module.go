@@ -41,7 +41,7 @@ func (m *Module) Update(ctx context.Context, width uint32, height uint32, limit 
 }
 
 type UpdateArgs struct {
-	Width  uint32 `msgpack:"width"`
-	Height uint32 `msgpack:"height"`
-	Limit  uint32 `msgpack:"limit"`
+	Width  uint32 `json:"width" msgpack:"width"`
+	Height uint32 `json:"height" msgpack:"height"`
+	Limit  uint32 `json:"limit" msgpack:"limit"`
 }

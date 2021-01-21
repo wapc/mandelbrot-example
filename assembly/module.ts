@@ -5,7 +5,6 @@ import {
   Encoder,
   Sizer,
   Codec,
-  toArrayBuffer,
   Value,
 } from "@wapc/as-msgpack";
 
@@ -25,7 +24,7 @@ export class Host {
       this.binding,
       "mandelbrot",
       "update",
-      toArrayBuffer(inputArgs)
+      inputArgs.toBuffer()
     );
     const decoder = new Decoder(payload);
     const ret = decoder.readArray(
@@ -112,5 +111,14 @@ export class UpdateArgs implements Codec {
     encoder.writeUInt32(this.height);
     encoder.writeString("limit");
     encoder.writeUInt32(this.limit);
+  }
+
+  toBuffer(): ArrayBuffer {
+    let sizer = new Sizer();
+    this.encode(sizer);
+    let buffer = new ArrayBuffer(sizer.length);
+    let encoder = new Encoder(buffer);
+    this.encode(encoder);
+    return buffer;
   }
 }

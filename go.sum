@@ -29,8 +29,8 @@ github.com/vmihailenco/msgpack/v4 v4.3.12 h1:07s4sz9IReOgdikxLTKNbBdqDMLsjPKXwvC
 github.com/vmihailenco/msgpack/v4 v4.3.12/go.mod h1:gborTTJjAo/GWTqqRjrLCn9pgNN+NXzzngzBKDPIqw4=
 github.com/vmihailenco/tagparser v0.1.1 h1:quXMXlA39OCbd2wAdTsGDlK9RkOk6Wuw+x37wVyIuWY=
 github.com/vmihailenco/tagparser v0.1.1/go.mod h1:OeAg3pn3UbLjkWt+rN9oFYB6u/cQgqMEUPoW2WPyhdI=
-github.com/wapc/tinygo-msgpack v0.1.1 h1:93hGuC1lmdKFWCCI+3qnMlg5ImSSVwtGMKIjhhKRKG0=
-github.com/wapc/tinygo-msgpack v0.1.1/go.mod h1:0Tf6eV/BIsWYhOSMHpqtwXjtwiyDKHCOy29cAFqY7uE=
+github.com/wapc/tinygo-msgpack v0.1.2 h1:E23yCc6PIJKOJqitRCprgqVV3k0XtH9wWsWmqIsqcgA=
+github.com/wapc/tinygo-msgpack v0.1.2/go.mod h1:0Tf6eV/BIsWYhOSMHpqtwXjtwiyDKHCOy29cAFqY7uE=
 github.com/wapc/wapc-go v0.2.1 h1:SGKGXm1OEplKl+xWyJNvRkDVhF9fbwz0K5BdHDcG8YI=
 github.com/wapc/wapc-go v0.2.1/go.mod h1:cWa/DMFUTFsq1cutKj119zP+eua5lWOEV+MxOIyBqKA=
 github.com/wapc/wapc-guest-tinygo v0.3.0 h1:nBbzqjntOSA4jXamwhfCDQhlOtfneGNPxRG0dI5MZVE=

@@ -21,11 +21,15 @@ func (h *Host) Update(width uint32, height uint32, limit uint32) ([]uint16, erro
 		Height: height,
 		Limit:  limit,
 	}
+	inputBytes, err := msgpack.ToBytes(&inputArgs)
+	if err != nil {
+		return []uint16{}, err
+	}
 	payload, err := wapc.HostCall(
 		h.binding,
 		"mandelbrot",
 		"update",
-		inputArgs.ToBuffer(),
+		inputBytes,
 	)
 	if err != nil {
 		return []uint16{}, err
@@ -151,13 +155,4 @@ func (o *UpdateArgs) Encode(encoder msgpack.Writer) error {
 	encoder.WriteUint32(o.Limit)
 
 	return nil
-}
-
-func (o *UpdateArgs) ToBuffer() []byte {
-	var sizer msgpack.Sizer
-	o.Encode(&sizer)
-	buffer := make([]byte, sizer.Len())
-	encoder := msgpack.NewEncoder(buffer)
-	o.Encode(&encoder)
-	return buffer
 }
